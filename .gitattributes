@@ -1,1 +1,9 @@
+#自动识别文本文件，并统一处理换行符
 * text=auto
+
+#强制视为文本文件
+*.meta text
+*.cs text
+*.unity text
+*.asset text
+*.json text
