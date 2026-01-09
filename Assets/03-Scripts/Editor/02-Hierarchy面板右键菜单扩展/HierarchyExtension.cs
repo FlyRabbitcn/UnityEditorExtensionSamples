@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 public class HierarchyExtension : Editor
 {
