@@ -7,14 +7,14 @@ public class TopMenuBarExtension : Editor
      * 点击此选项，便可执行特定的方法，需要注意的是，该方法必须是静态方法。
      */
 
-    [MenuItem("Sample/顶部菜单栏/打开持久化存储文件夹")]
+    [MenuItem("Sample/顶部菜单栏/打开持久化存储文件夹", priority = 1)]
     public static void OpenPersistentDataFolder()
     {
         EditorUtility.RevealInFinder(Application.persistentDataPath);
     }
 
 
-    [MenuItem("Sample/顶部菜单栏/显示选中物体的名称")]
+    [MenuItem("Sample/顶部菜单栏/显示选中物体的名称", priority = 2)]
     public static void ShowSelectedGameObjectName()
     {
         string name = Selection.activeGameObject.name;
@@ -35,5 +35,17 @@ public class TopMenuBarExtension : Editor
         }
 
         return true;
+    }
+
+    /*
+     * 你还可以给一个选项前面打勾或者不打勾，这需要一个变量存储。
+     * 你还可以在其他地方用这个变量。
+     */
+    public static bool Checked = false;
+    [MenuItem("Sample/顶部菜单栏/打勾", false, priority = 3)]
+    public static void Check()
+    {
+        Checked = !Checked;
+        Menu.SetChecked("Sample/顶部菜单栏/打勾", Checked);
     }
 }
